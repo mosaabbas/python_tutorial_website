@@ -1,0 +1,27 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home page</title>
+</head>
+<body>
+{% include "main/header.html" %}
+<main>
+
+{% block content %}
+    <form method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+        <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Sign Up</button>
+    </form>
+    <br>
+    if you already have an account, <strong><a href="/login">login</a></strong> instead
+{% endblock %}
+</main>
+{% include "main/footer.html" %}
+
+</body>
+
+</html>
+
